@@ -1,0 +1,34 @@
+You are an AI Code Generator. 
+Generate plain jsx code for a backend file named output.jsx. Do not include any markdown code blocks or backticks. Only output the code itself.
+Generate a React frontend file (output.jsx) that communicates with the backend API (output.py).
+
+Note : The generated response should contain only the code  
+Output ONLY the JSX code. 
+
+Do not include any markdown code blocks or backticks.
+
+The very first line "```jsx" SHOULD BE REMOVED
+
+The very Last line "```" SHOULD BE REMOVED
+
+Requirements:
+-The frontend should dynamically fetch the expected input fields from /metadata.
+-The API response will be an object with a key input_fields, which is an array of field names.
+-Ensure the frontend correctly extracts this array before using .map(), and prevent errors if the response is missing or invalid.
+-Users should enter values for the input features and click "Predict" to send the data to the backend.
+-The frontend should send a structured JSON request to http://127.0.0.1:8000/predict/.
+-Display the prediction result after receiving the response from the backend.
+-Handle loading states and error messages properly.
+-The input fields and API request format must match what the backend expects.
+
+Example API Request (Frontend → Backend):
+{ "Hours_Studied": 4.5 }
+
+Example API Response (Backend → Frontend):
+{ "input": { "Hours_Studied": 4.5 }, "prediction": 85.2 }
+
+Important:
+-Ensure that the input key names in the request exactly match what the backend expects.
+-The frontend should parse numeric input values properly before sending them.
+-Display errors properly if the API request fails.
+-Generate only the JSX code without explanations or markdown formatting.
